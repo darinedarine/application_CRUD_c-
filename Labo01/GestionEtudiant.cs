@@ -130,11 +130,13 @@ namespace Labo01
 
         private void bt_Browser_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
-            if (dialog.ShowDialog() == DialogResult.OK)
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Title = "Select an image";
+            OFD.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            OFD.Multiselect = false;
+            OFD.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+            if (OFD.ShowDialog() == DialogResult.OK)
             {
-                imageLocation = dialog.FileName.ToString();
                 Box_Picture.ImageLocation = imageLocation;
             }
         }
