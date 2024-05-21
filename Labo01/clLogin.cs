@@ -9,31 +9,27 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using Org.BouncyCastle.Utilities;
-using System.IO;
+
 
 
 namespace Labo01
 {
     internal class ClLogin
     {
-        //string imageLocation = "";
 
-        MySqlConnection cns = new MySqlConnection("server=localhost;uid=root;pwd=root;database=clogindb");
+        MySqlConnection cns = new MySqlConnection("server=localhost;uid=root;database=visuel");
+
         public void Ajouter(string NomComplet, string Username, string Password, string DateNaissance, string Sexe, string Mobile, string Email, string Niveau, string Specialite)
         {
             try
             {
-                string Query = "INSERT INTO tblclogin (nomcomplet,username,password,datenaissance,sexe,mobile,email,niveau,specialite) VALUES ('" + NomComplet + "','" + Username + "','" + Password + "','" + DateNaissance+ "','" + Sexe + "','" + Mobile + "','" + Email + "','" + Niveau + "','" + Specialite + "')";
+                string Query = "INSERT INTO tbllogin (nomcomplet,login,Password,datenaissance,sexe,mobile,email,niveau,specialite) VALUES ('" + NomComplet + "','" + Username + "','" + Password + "','" + DateNaissance+ "','" + Sexe + "','" + Mobile + "','" + Email + "','" + Niveau + "','" + Specialite + "')";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
                 cns.Open();
 
-                //byte[] images = null;
-               // FileStream stream = new FileStream(imageLocation, FileMode.Open, FileAccess.Read);
-               // BinaryReader brs = new BinaryReader(stream);
-                //images = brs.ReadBytes((int)stream.Length);
-                //cmd.Parameters.Add(new MySqlParameter("@image", images));
+             
 
                 cmd.ExecuteNonQuery();
             }
@@ -47,7 +43,7 @@ namespace Labo01
         {
             try
             {
-                string Query = "UPDATE tblclogin SET username='" + Login + "' where password='" + Pwd + "'";
+                string Query = "UPDATE tbllogin SET login='" + Login + "' where Password='" + Pwd + "'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -64,7 +60,7 @@ namespace Labo01
         {
             try
             {
-                string Query = "DELETE FROM tblclogin where id='" + Id + "'";
+                string Query = "DELETE FROM tbllogin where Id='" + Id + "'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -82,7 +78,7 @@ namespace Labo01
         {
             try
             {
-                string Query = "SELECT * FROM tblclogin ORDER BY username";
+                string Query = "SELECT * FROM tbllogin ORDER BY login";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -101,7 +97,7 @@ namespace Labo01
         {
             try
             {
-                string Query = "SELECT * FROM tblclogin";
+                string Query = "SELECT * FROM tbllogin";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -116,11 +112,11 @@ namespace Labo01
             }
         }
 
-        public MySqlDataReader Chercher(string Username)
+        public MySqlDataReader Chercher(string Login)
         {
             try
             {
-                string Query = "SELECT * FROM tblclogin where username like '%" + Username + "%'";
+                string Query = "SELECT * FROM tbllogin where login like '%" + Login + "%'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;
@@ -140,7 +136,7 @@ namespace Labo01
             try
             {
                 bool Result = false;
-                string Query = "SELECT * FROM tblclogin WHERE username='" + Login + "' AND password='" + Pwd + "'";
+                string Query = "SELECT * FROM tbllogin WHERE login='" + Login + "' AND Password='" + Pwd + "'";
                 MySqlCommand cmd = new MySqlCommand(Query);
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cns;

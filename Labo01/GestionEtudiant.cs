@@ -19,7 +19,7 @@ namespace Labo01
         int xSexeChecked = 1;
         string imageLocation = "";
 
-        public void GetListEtudiant()
+        public void liste_etudiant()
         {
             ClLogin Etudiant = new ClLogin();
             MySqlDataReader Rs;
@@ -66,7 +66,7 @@ namespace Labo01
             ClLogin gesetud = new ClLogin();
             gesetud.Suppression(xId);
             MessageBox.Show("Suppression effectuer");
-            GetListEtudiant();
+            liste_etudiant();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -91,13 +91,13 @@ namespace Labo01
                 ClLogin gesetud = new ClLogin();
                 gesetud.Ajouter(xNomComplet, xUsername, xPassword, xDateNaissance.ToShortDateString(), xSexe, xMobile, xEmail, xNiveau, xSpecialite);
                 MessageBox.Show("Bien Ajouter");
-                GetListEtudiant();
+                liste_etudiant();
             }
         }
 
         private void GestionEtudiant_Load(object sender, EventArgs e)
         {
-            GetListEtudiant();
+            liste_etudiant();
 
             Load_tbl_Specialite_in_combobox();
 
@@ -112,9 +112,9 @@ namespace Labo01
             MySqlDataReader Rs;
             Rs = Spt.Lister_code_specialite();
             DataTable dt = new DataTable();
-            dt.Columns.Add("code", typeof(string));
+            dt.Columns.Add("specialite", typeof(string));
             dt.Load(Rs);
-            comboBox2.ValueMember = "code";
+            comboBox2.ValueMember = "specialite";
             comboBox2.DataSource = dt;
         }
 

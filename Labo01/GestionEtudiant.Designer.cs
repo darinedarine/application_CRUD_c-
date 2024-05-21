@@ -65,6 +65,7 @@
             this.Box_Picture.Location = new System.Drawing.Point(12, 19);
             this.Box_Picture.Name = "Box_Picture";
             this.Box_Picture.Size = new System.Drawing.Size(189, 147);
+            this.Box_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Box_Picture.TabIndex = 0;
             this.Box_Picture.TabStop = false;
             // 
@@ -146,21 +147,21 @@
             // 
             this.textNomComplet.Location = new System.Drawing.Point(313, 19);
             this.textNomComplet.Name = "textNomComplet";
-            this.textNomComplet.Size = new System.Drawing.Size(341, 20);
+            this.textNomComplet.Size = new System.Drawing.Size(231, 20);
             this.textNomComplet.TabIndex = 11;
             // 
             // textMobile
             // 
             this.textMobile.Location = new System.Drawing.Point(313, 155);
             this.textMobile.Name = "textMobile";
-            this.textMobile.Size = new System.Drawing.Size(289, 20);
+            this.textMobile.Size = new System.Drawing.Size(231, 20);
             this.textMobile.TabIndex = 13;
             // 
             // textEmail
             // 
             this.textEmail.Location = new System.Drawing.Point(313, 181);
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(289, 20);
+            this.textEmail.Size = new System.Drawing.Size(231, 20);
             this.textEmail.TabIndex = 14;
             // 
             // comboBox1
@@ -267,14 +268,14 @@
             // 
             this.textPassword.Location = new System.Drawing.Point(313, 71);
             this.textPassword.Name = "textPassword";
-            this.textPassword.Size = new System.Drawing.Size(289, 20);
+            this.textPassword.Size = new System.Drawing.Size(231, 20);
             this.textPassword.TabIndex = 27;
             // 
             // textNomUtilisateur
             // 
             this.textNomUtilisateur.Location = new System.Drawing.Point(313, 45);
             this.textNomUtilisateur.Name = "textNomUtilisateur";
-            this.textNomUtilisateur.Size = new System.Drawing.Size(289, 20);
+            this.textNomUtilisateur.Size = new System.Drawing.Size(231, 20);
             this.textNomUtilisateur.TabIndex = 28;
             // 
             // optHomme

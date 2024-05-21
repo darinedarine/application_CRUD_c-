@@ -51,7 +51,7 @@
             // 
             this.txt_PWD.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_PWD.ForeColor = System.Drawing.Color.Black;
-            this.txt_PWD.Location = new System.Drawing.Point(109, 62);
+            this.txt_PWD.Location = new System.Drawing.Point(109, 75);
             this.txt_PWD.Name = "txt_PWD";
             this.txt_PWD.PasswordChar = '*';
             this.txt_PWD.Size = new System.Drawing.Size(210, 28);
@@ -61,7 +61,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.IndianRed;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(29, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 22);
@@ -72,8 +72,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.IndianRed;
-            this.label2.Location = new System.Drawing.Point(29, 65);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(29, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 22);
             this.label2.TabIndex = 3;
@@ -81,28 +81,30 @@
             // 
             // bt_Connect
             // 
+            this.bt_Connect.BackColor = System.Drawing.Color.White;
             this.bt_Connect.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Connect.ForeColor = System.Drawing.Color.IndianRed;
-            this.bt_Connect.Location = new System.Drawing.Point(122, 96);
+            this.bt_Connect.ForeColor = System.Drawing.Color.Black;
+            this.bt_Connect.Location = new System.Drawing.Point(109, 125);
             this.bt_Connect.Name = "bt_Connect";
             this.bt_Connect.Size = new System.Drawing.Size(116, 34);
             this.bt_Connect.TabIndex = 4;
-            this.bt_Connect.Text = "Connect";
-            this.bt_Connect.UseVisualStyleBackColor = true;
+            this.bt_Connect.Text = "Connecte";
+            this.bt_Connect.UseVisualStyleBackColor = false;
             this.bt_Connect.Click += new System.EventHandler(this.bt_Connect_Click);
             this.bt_Connect.MouseLeave += new System.EventHandler(this.bt_Connect_MouseLeave);
             this.bt_Connect.MouseHover += new System.EventHandler(this.bt_Connect_MouseHover);
             // 
             // bt_Exit
             // 
+            this.bt_Exit.BackColor = System.Drawing.Color.White;
             this.bt_Exit.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Exit.ForeColor = System.Drawing.Color.IndianRed;
-            this.bt_Exit.Location = new System.Drawing.Point(244, 96);
+            this.bt_Exit.ForeColor = System.Drawing.Color.Black;
+            this.bt_Exit.Location = new System.Drawing.Point(258, 125);
             this.bt_Exit.Name = "bt_Exit";
-            this.bt_Exit.Size = new System.Drawing.Size(75, 34);
+            this.bt_Exit.Size = new System.Drawing.Size(91, 34);
             this.bt_Exit.TabIndex = 5;
             this.bt_Exit.Text = "Exit";
-            this.bt_Exit.UseVisualStyleBackColor = true;
+            this.bt_Exit.UseVisualStyleBackColor = false;
             this.bt_Exit.Click += new System.EventHandler(this.bt_Exit_Click);
             this.bt_Exit.DragLeave += new System.EventHandler(this.bt_Exit_DragLeave);
             this.bt_Exit.MouseHover += new System.EventHandler(this.bt_Exit_MouseHover);
@@ -116,8 +118,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(347, 150);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(375, 186);
             this.Controls.Add(this.bt_Exit);
             this.Controls.Add(this.bt_Connect);
             this.Controls.Add(this.label2);

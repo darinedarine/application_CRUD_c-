@@ -19,8 +19,8 @@ namespace Labo01
 
         private void bt_Specialite_Click(object sender, EventArgs e)
         {
-            frmSpecialite frmSpecialite = new frmSpecialite();
-            frmSpecialite.Show();
+            frmSpecialite spec = new frmSpecialite();
+            spec.Show();
         }
 
         private void bt_Exit_Click(object sender, EventArgs e)
@@ -30,8 +30,19 @@ namespace Labo01
 
         private void bt_Etudiant_Click(object sender, EventArgs e)
         {
-            GestionEtudiant gesetud = new GestionEtudiant();
-            gesetud.Show();
+            GestionEtudiant etudiant = new GestionEtudiant();
+            etudiant.Show();
+        }
+
+        private void bt_Groupe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_Groupe_Click_1(object sender, EventArgs e)
+        {
+            frmGroupe gr = new frmGroupe();
+            gr.Show();
         }
     }
 }

@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,20 +12,20 @@ using MySql.Data.MySqlClient;
 
 namespace Labo01
 {
-    
-    public partial class frmSpecialite : Form
+    public partial class frmGroupe : Form
     {
-        public void list_specialite()
+        public void list_groupe()
         {
-            ClSpecialite Spt = new ClSpecialite();
+            ClGroupe Spt = new ClGroupe();
             MySqlDataReader Rs;
             Rs = Spt.Lister();
             DataTable dt = new DataTable();
             dt.Load(Rs);
-            List_Specialite.DataSource = dt;
+            List_Groupe.DataSource = dt;
 
         }
-        public frmSpecialite()
+
+        public frmGroupe()
         {
             InitializeComponent();
         }
@@ -34,38 +33,31 @@ namespace Labo01
         private void bt_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void bt_Save_Click(object sender, EventArgs e)
         {
-           
-                string xCode, xSpecialite;
-                xCode = txt_Code.Text;
-                xSpecialite = txt_Specialite.Text;
-                if (!string.IsNullOrEmpty(xCode)  && xSpecialite != "")
-                {
-                ClSpecialite Spt = new ClSpecialite(); 
-                Spt.Ajouter(xCode,xSpecialite);
-                list_specialite();
-                }
-               
+            string xCode, xGroupe;
+            xCode = txt_Code.Text;
+            xGroupe = txt_Groupe.Text;
+            if (!string.IsNullOrEmpty(xCode) && xGroupe != "")
+            {
+                ClGroupe Spt = new ClGroupe();
+                Spt.Ajouter(xCode, xGroupe);
+                list_groupe();
             }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-            list_specialite();
-
         }
 
-        private void List_Specialite_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void frmGroupe_Load(object sender, EventArgs e)
         {
+            list_groupe();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            list_specialite();
+            list_groupe();
 
         }
 
@@ -74,12 +66,12 @@ namespace Labo01
             String xCode;
             xCode = txt_Code.Text;
 
-            ClSpecialite Spt = new ClSpecialite();
+            ClGroupe Spt = new ClGroupe();
             MySqlDataReader Rs;
             Rs = Spt.Chercher(xCode);
             DataTable dt = new DataTable();
             dt.Load(Rs);
-            List_Specialite.DataSource = dt;
+            List_Groupe.DataSource = dt;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -87,20 +79,20 @@ namespace Labo01
             String xCode;
             xCode = txt_Code.Text;
 
-            ClSpecialite Spt = new ClSpecialite();
+            ClGroupe Spt = new ClGroupe();
             Spt.Suppression(xCode);
-            list_specialite();
+            list_groupe();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             string xCode, xSpecialite;
             xCode = txt_Code.Text;
-            xSpecialite = txt_Specialite.Text;
+            xSpecialite = txt_Groupe.Text;
 
-            ClSpecialite Spt = new ClSpecialite();
+            ClGroupe Spt = new ClGroupe();
             Spt.Modifier(xCode, xSpecialite);
-            list_specialite();
+            list_groupe();
         }
     }
 }
